@@ -49,7 +49,7 @@ def main():
     clock = pygame.time.Clock()
 
     screen = pygame.display.set_mode((600, 300))
-    pygame.display.set_caption("Run Vasia, run!")
+    pygame.display.set_caption("Run Sonic, run!")
 
     background = pygame.image.load('Pictures/background.webp').convert_alpha()
     background_size = pygame.transform.scale(background, (600, 330))
