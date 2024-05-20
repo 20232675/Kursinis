@@ -6,11 +6,17 @@ Kodo metu buvo panaudotos klases, funkcijos, enkapsuliacija ir paveldejimas. Buv
 
 „GameObject“ klasė: ši klasė yra bendras žaidimo objektas, suteikiantis ypatybes pasiekti jo vaizdo ir stačiakampio atributus. Tai apima bendras funkcijas, reikalingas visiems žaidimo objektams, pavyzdžiui, vaizdų įkėlimą ir jų padėties nustatymą.
 
-Žaidėjų klasė: kilusi iš GameObject klasės, žaidėjų klasė atstovauja pagrindiniam žaidimo veikėjui. Jame yra metodas jump_action(), skirtas valdyti žaidėjo šokinėjimo mechaniką, kuris reaguoja į tarpo klavišo paspaudimą. Ši klasė užtikrina inkapsuliavimą ir paveldėjimą paveldėdama iš GameObject ir išplečiant jo funkcionalumą.
+ Player klase kilusi iš GameObject klasės, žaidėjų klasė atstovauja pagrindiniam žaidimo veikėjui. Jame yra metodas jump_action(), skirtas valdyti žaidėjo šokinėjimo mechaniką, kuris reaguoja į tarpo klavišo paspaudimą. Ši klasė užtikrina inkapsuliavimą ir paveldėjimą paveldėdama iš GameObject ir išplečiant jo funkcionalumą.
 
 Priešo klasė: Panašiai kaip žaidėjų klasė, priešų klasė paveldima iš GameObject, kad atstovautų priešiškiems subjektams žaidime. Jis inicijuojamas naudojant skirtingą vaizdą ir padėtį, todėl pateikiamas įvairus žaidimo elementų rinkinys.
 
+Super raktažodis naudojamas bazinės (parent) klasės metodams ir konstruktoriams iškviesti poklasiuose (antrinėse klasėse). Tai leidžia išvengti kodo dubliavimo ir suteikia lankstumo plečiant klasių funkcionalumą.
+
 Pagrindinė funkcija: funkcija main() inicijuoja Pygame modulį, nustato žaidimo langą, įkelia išteklius ir valdo žaidimo ciklą. Jis tvarko žaidėjo įvestį, atnaujina žaidimo būseną ir atitinkamai atvaizduoja grafiką. Be to, jis įrašo programos vykdymo laiką ir įrašo jį į failą, pavadintą execution_time.txt.
+
+{if __name__ == "__main__":
+    main()}
+Šis kodo blokas paleidžia funkciją game() tik tuo atveju, jei scenarijus vykdomas tiesiogiai. Jei scenarijus importuojamas į kitą failą, funkcija game() nebus iškviesta automatiškai. Tai leidžia kontroliuoti kodo vykdymą ir užkirsti kelią nereikalingam vykdymui importuojant.
 
 Žaidimo pratesimas atrodytu jau su labiau pasunkintais artejančių kliučių atsiradimais už ribų su skirtingais generavimosi intervalais.
 
